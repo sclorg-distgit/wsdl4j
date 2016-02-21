@@ -35,7 +35,7 @@
 Summary:        Web Services Description Language Toolkit for Java
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        1.6.3
-Release:        3.11%{?dist}
+Release:        3.12%{?dist}
 Epoch:          0
 License:        CPL
 URL:            http://sourceforge.net/projects/wsdl4j
@@ -65,13 +65,13 @@ Javadoc for %{pkg_name}.
 %setup -q -n %{pkg_name}-1_6_3
 
 %build
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 ant compile javadocs
 %{?scl:EOF}
 
 %install
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 # inject OSGi manifests
 mkdir -p META-INF
@@ -104,6 +104,9 @@ cp -pr build/javadocs/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}/
 %{_javadocdir}/%{name}
 
 %changelog
+* Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 0:1.6.3-3.12
+- maven33 rebuild #2
+
 * Sat Jan 09 2016 Michal Srb <msrb@redhat.com> - 0:1.6.3-3.11
 - maven33 rebuild
 

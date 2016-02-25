@@ -35,7 +35,7 @@
 Summary:        Web Services Description Language Toolkit for Java
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        1.6.3
-Release:        3.12%{?dist}
+Release:        3.13%{?dist}
 Epoch:          0
 License:        CPL
 URL:            http://sourceforge.net/projects/wsdl4j
@@ -104,6 +104,9 @@ cp -pr build/javadocs/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}/
 %{_javadocdir}/%{name}
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 0:1.6.3-3.13
+- Fix BR on maven-local & co.
+
 * Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 0:1.6.3-3.12
 - maven33 rebuild #2
 
